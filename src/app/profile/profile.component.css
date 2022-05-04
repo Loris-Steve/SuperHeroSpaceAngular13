@@ -1,0 +1,55 @@
+.profile {
+    padding: 2% 10%;
+}
+
+h3 {  
+    font-weight: 700;
+    margin: 0;
+}
+
+h5 {
+    margin: 0;
+}
+
+.powerstat, .appearance, .property {
+    font-weight: 700;
+    font-size: 0.75em;
+    margin: 0;
+}
+
+.appearance {
+    margin-bottom: 10px;
+}
+
+.power-wrapper {
+    margin: 10px 0;
+    padding: 0 30px
+}
+
+.property, .property-content  {
+
+    font-size: 0.85em;
+    margin: 0; 
+}
+
+.property {
+    font-weight: 700;
+}
+
+.progress {
+    margin: 0;
+}
+
+.btn {
+    font-size: 0.8em;
+}
+
+.btn-flat {
+    border-radius: 3px;
+    border: 1px #2196f3  solid;
+}
+
+.btn-flat:hover {
+    background-color: #2196f3 !important;
+    color: white !important;
+}

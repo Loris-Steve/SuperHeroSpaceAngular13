@@ -1,0 +1,15 @@
+<nav>
+    <div class="nav-wrapper " [ngClass]="navbarColor">
+        <a routerLink="" class="brand-logo myLogo">SuperHero</a>
+        <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li routerLinkActive="active"><a routerLink="/favorite"><i class="material-icons left">favorite</i>Favorite</a></li>
+            <li routerLinkActive="active"><a routerLink="/"><i class="material-icons right">search</i>Search</a></li>
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo" #sidenav>
+    <li routerLinkActive="active"><a routerLink="/favorite" (click)="closeMenu()"><i class="material-icons left">favorite</i>Favorite</a></li>
+    <li routerLinkActive="active"><a routerLink="/" (click)="closeMenu()"><i class="material-icons right">search</i>Search</a></li>
+</ul>

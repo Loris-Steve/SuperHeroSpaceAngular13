@@ -1,0 +1,44 @@
+<div class="row">
+    <!-- pour les petits ecran de taille s on prend tout la largeur s12
+    medium on prend 4 et pour largeur on prend 3 -->
+    <div *ngFor="let superhero of superheroes" class="col s12 m4 l3">
+        <app-hero-details [superhero] ="superhero" (addToFavorite)="addToFavoriteMain($event)"></app-hero-details>
+    </div>
+</div>
+
+<!-- <div class="row">
+    <div class="col s3">
+        <app-hero-details [superhero] ="superheroes[0]" ></app-hero-details>
+    </div>
+    <div class="col s3">
+        <app-hero-details [superhero] ="superheroes[1]" (addToFavorite)="addToFavoriteMain($event)"></app-hero-details>
+    </div>
+    <div class="col s3">
+        <app-hero-details [superhero] ="superheroes[2]" (addToFavorite)="addToFavoriteMain($event)"></app-hero-details>
+    </div>
+    <div class="col s3">
+        <app-hero-details [superhero] ="superheroes[3]" (addToFavorite)="addToFavoriteMain($event)"></app-hero-details>
+    </div>
+    <div class="col s3">
+        <app-hero-details [superhero] ="superheroes[4]" (addToFavorite)="addToFavoriteMain($event)"></app-hero-details>
+    </div>
+</div> -->
+
+<!-- <div class="row">
+    <div class="col s3">
+        <app-hero-details [name]="'Captain America'" [imgSrc]="'https://tetu.com/wp-content/uploads/2021/03/captain.jpg'"></app-hero-details>
+    </div>
+    <div class="col s3">
+        <app-hero-details [name]="'Spiderman'" [imgSrc]="'https://image.api.playstation.com/vulcan/img/rnd/202010/2122/19xis9VT5XfnXsLSMkxUjvVd.png?w=440'"></app-hero-details>
+    </div>
+    <div class="col s3">
+        <app-hero-details [name]="'Captain Marvel'" [imgSrc]="'https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/01/captain-marvel-tout-savoir__w1200.jpg'"></app-hero-details>
+    </div>
+    <div class="col s3">
+        <app-hero-details [name]="'Thor'" [imgSrc]="'https://img-4.linternaute.com/AUzRChpWK7F8d2-VfyzYj14Q6Kc=/1240x/smart/7447f5dde6af4bb684ef7791cc9a828e/ccmcms-linternaute/23558036.jpg'"></app-hero-details>
+    </div>
+    <div class="col s3">
+        <app-hero-details [name]="'Iron Man'" [imgSrc]="'https://fr.web.img3.acsta.net/medias/nmedia/18/62/89/45/18876909.jpg'"></app-hero-details>
+    </div>
+
+</div> -->

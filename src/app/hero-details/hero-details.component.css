@@ -1,0 +1,13 @@
+.card-fab {
+    position: relative;
+    z-index: 1;
+}
+
+.card.small .card-image + .card-content,
+.card.medium .card-image + .card-content,
+.card.large .card-image + .card-content,
+.card.small .card-image + .card-fab + .card-content,
+.card.medium .card-image + .card-fab +.card-content,
+.card.large .card-image + .card-fab + .card-content {
+  max-height: 40%;
+} 

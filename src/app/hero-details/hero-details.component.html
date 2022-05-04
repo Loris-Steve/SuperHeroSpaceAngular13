@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card large">
+            <div class="card-image">
+                <img [src]="superhero.image.url">
+            </div>
+
+            <div class="card-fab">
+                <!-- <a (click)="addFavorite($event)" class="btn-floating halfway-fab waves-effect waves-light " 
+                [ngClass]="{ 'red' : !superhero.favorite, 'grey' : superhero.favorite }"
+                >
+                    <i *ngIf="!superhero.favorite then fav else rem" class="material-icons" ></i>
+                    <ng-template #fav>
+                        <i #favBtn class="material-icons tooltipped" data-position="top" data-tooltip="Ajouter aux favoris">favorite</i>
+                    </ng-template>
+                    <ng-template #rem>
+                        <i #remBtn class="material-icons">remove</i>
+                    </ng-template>
+                </a> -->
+                <a
+                #favBtn
+                (click)="addFavorite($event)"
+                class="btn-floating halfway-fab waves-effect waves-light tooltipped"
+                data-position="top"
+                [attr.data-tooltip]="superhero.favorite ? 'Retirer des favoris' : 'Ajouter aux favoris'"
+                [ngClass]="{ red: !superhero.favorite, grey: superhero.favorite }"
+              >
+                <i *ngIf="!superhero.favorite; then fav; else rem"></i>
+                <ng-template #fav>
+                  <i class="material-icons">favorite</i>
+                </ng-template>
+                <ng-template #rem>
+                  <i class="material-icons">remove</i>
+                </ng-template>
+              </a>
+            </div>
+            <div class="card-content">
+                <span  class="card-title" [ngStyle]="{color : 'red',fontWeight : 'bold', borderRight : 2 > 1 ? 'solid' : ''}">{{superhero.name}}</span>
+                <p>{{superhero.biography['full-name']}}</p>
+                <p>{{superhero.biography['alter-egos']}}</p>
+                <p [innerHtml]="superhero | power" ></p>
+                <p><a [routerLink]="['/profile',superhero.id]" class="waves-effect waves-light btn blue">Détails...</a></p>
+                <!-- <table>
+                    <td [attr.colspan]="2">{{superhero.favorite}}</td>
+                </table> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-image">
+                <img [src]="imgUrl">
+                <a (click)="addFavorite()" class="btn-floating halfway-fab waves-effect waves-light red"><i
+                        class="material-icons">favorite</i></a>
+            </div>
+            <div class="card-content">
+                <span  class="card-title" [ngStyle]="{color : 'red',fontWeight : fontTitle, borderRight : colspanValue > 1 ? 'solid' : ''}">{{name}}</span>
+                <p>{{description}}</p>
+                <table>
+                    <td [attr.colspan]="colspanValue">test</td>
+                </table>
+            </div>
+        </div>
+    </div>
+</div> -->

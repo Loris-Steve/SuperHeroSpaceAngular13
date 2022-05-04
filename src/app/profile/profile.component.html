@@ -1,0 +1,77 @@
+<div *ngIf="superhero" class="row profile">
+    <div class="col s12 m4">
+        <img class="responsive-img" [src]="superhero ? superhero.image.url : ''" />
+    </div>
+    <div class="col s12 m8 center">
+        <h3 class="blue-grey-text darken-4">{{ superhero.name }}</h3>
+        <h5 class="blue-grey-text darken-4">{{ superhero.biography["full-name"] }}</h5>
+        <p class="appearance blue-grey-text darken-4">
+            {{ superhero.appearance.gender }} - {{ superhero.appearance.race }} -
+            {{ superhero.appearance.height[0] }} -
+            {{ superhero.appearance.weight[0] }} -
+            {{ superhero.appearance["eye-color"] }} -
+            {{ superhero.appearance["hair-color"] }}
+        </p>
+        <a (click)="addFavorite()" class="waves-effect waves-light btn"
+        [ngClass]="{'red': !superhero.favorite, 'grey': superhero.favorite}">
+        <i class="material-icons left">{{superhero.favorite ? 'remove':'favorite'}}</i>
+        {{superhero.favorite ? 'Retirer des favoris':'Ajouter aux favoris'}}
+    </a>
+
+    <div class="power-wrapper">
+        <div *ngFor="let key of objectKeys(superhero.powerstats)">
+            <span class="powerstat" [ngClass]="(superhero.powerstats[key] | powerstat) + '-text'">{{ key }}</span>
+            <div class="progress">
+                <div class="determinate" [style.width.%]="superhero.powerstats[key]"
+                [ngClass]="superhero.powerstats[key] | powerstat"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row blue-grey-text darken-4">
+        <div class="col s12 m6 ">
+            <p class="property">Alter-egos</p>
+            <p class="property-content">
+                {{ superhero.biography["alter-egos"] ? superhero.biography["alter-egos"] : "none" }}
+            </p>
+            <p class="property">Aliases</p>
+            <p class="property-content">
+                {{ superhero.biography.aliases ? superhero.biography.aliases : "none" }}
+            </p>
+            <p class="property">Place-of-birth</p>
+            <p class="property-content">
+                {{ superhero.biography["place-of-birth"] ? superhero.biography["place-of-birth"] : "none" }}
+            </p>
+            <p class="property">Occupation</p>
+            <p class="property-content">
+                {{ superhero.work.occupation ? superhero.work.occupation : "none" }}
+            </p>
+        </div>
+        <div class="col s12 m6">
+            <p class="property">Base</p>
+            <p class="property-content">
+                {{ superhero.work.base ? superhero.work.base : "none" }}
+            </p>
+            <p class="property">First-appearance</p>
+            <p class="property-content">
+                {{ superhero.biography["first-appearance"] ? superhero.biography["first-appearance"] : "none" }}
+            </p>
+            <p class="property">Publisher</p>
+            <p class="property-content">
+                {{ superhero.biography.publisher ? superhero.biography.publisher : "none" }}
+            </p>
+            <p class="property">alignment</p>
+            <p class="property-content">
+                {{ superhero.biography.alignment ? superhero.biography.alignment : "none"}}
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <p class="center">
+            <a [routerLink]="data.link"
+                class="waves-effect waves-light btn blue-text btn-flat transparent">Retour</a>
+        </p>
+    </div>
+
+    </div> 
+</div>

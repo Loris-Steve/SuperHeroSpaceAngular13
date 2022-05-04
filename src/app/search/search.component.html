@@ -1,0 +1,22 @@
+<div class="row">
+    <form class="col s12" (submit)="formSubmit()">
+        <div class="row">
+            <div class="input-field col s10 offset-s1">
+                <input [(ngModel)]="mot" id="mot" type="text" class="validate" name="mot">
+                <label for="mot">Entrer le nom du superhero et taper Entrer</label>
+                <!-- <span class="helper-text" data-error="wrong" data-success="right">{{mot}} </span> -->
+                <span class="helper-text" >{{errorText}} </span>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- <div class="test ">
+    div test button
+</div> -->
+
+
+<app-preloader *ngIf="loading"></app-preloader>
+<app-notfound *ngIf="notFound"></app-notfound>
+
+<!-- <p> The hero birthday {{ birthday | date:'fullDate' | lowercase}} </p> -->
+<app-hero-list [superheroes]="superheroes"></app-hero-list>
